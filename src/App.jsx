@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react';
 import Header from "./components/Header";
 import UserCard from "./components/UserCard";
 import Ladder from "./components/Ladder";
@@ -69,6 +69,17 @@ const App = () => {
         console.log(newMap);
         setProblemStatusMap(newMap);
     };
+
+    useEffect(() => {
+		if (!userData) return;
+		setProblemStatusMap({});
+		if (fetchIntervalID) {
+			clearInterval(fetchIntervalID);
+		}
+		updateProblemStatusMap(userData);
+		const newFetchIntervalID = setInterval(() => updateProblemStatusMap(userData), constants.submissionFetchInterval);
+		setfetchIntervalID(newFetchIntervalID);
+	}, [userData]);
 
     return (
         <div className="App container-fluid">

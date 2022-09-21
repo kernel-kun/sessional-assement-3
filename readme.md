@@ -6,6 +6,8 @@ CF
     https://codeforces.com/api/user.info?handles=DmitriyH
     https://codeforces.com/api/user.status?handle=Fefer_Ivan&from=1&count=10
 
+https://cors-anywhere.herokuapp.com/corsdemo
+
 ## Articles:
 
 How to sort react list
