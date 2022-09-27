@@ -27,7 +27,7 @@ function Ladder(props) {
         await axios
             .request(options)
             .then(function (response) {
-                // console.log(response.data);
+                console.log("Ladder Data fetched : ", response.data);
                 res = response.data;
             })
             .catch(function (err) {
@@ -56,6 +56,7 @@ function Ladder(props) {
             solved: solvedCount,
             unsolved: problems.length - solvedCount,
         });
+        // console.log("Updated Problem Status Map: ", newProblems)
         setProblems(newProblems);
     };
 

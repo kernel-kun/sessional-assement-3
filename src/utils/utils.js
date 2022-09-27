@@ -58,7 +58,7 @@ export const fetchUserSubmissions = async (user) => {
     await axios
         .request(options)
         .then(function (response) {
-            console.log(response.data);
+            console.log("Raw user-submissions Data : ", response.data);
             resData = response.data;
         })
         .catch(function (err) {

@@ -22,7 +22,7 @@ const App = () => {
         endRating: 1300,
     });
     const [problemStatusMap, setProblemStatusMap] = useState({});
-    const [fetchIntervalID, setfetchIntervalID] = useState(30 * 1000);
+    const [fetchIntervalID, setfetchIntervalID] = useState();
 
     // Fetch User Details from CF using Axios
     const loadUser = async () => {
@@ -39,7 +39,7 @@ const App = () => {
         await axios
             .request(options)
             .then(function (response) {
-                console.log(response.data);
+                console.log("User Data : ", response.data);
                 userDataRes = response.data;
                 setUserErr("");
             })
@@ -66,7 +66,7 @@ const App = () => {
             const id = getProblemID(problem);
             newMap[id] = assignNewStatus(newMap[id], submission.verdict);
         })
-        console.log(newMap);
+        console.log("User-submissions Status Map: ", newMap);
         setProblemStatusMap(newMap);
     };
 
