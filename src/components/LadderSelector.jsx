@@ -1,8 +1,5 @@
-/**
- * Every Ladder range is [X, Y), end is exclusive
- * @param props 
- * @returns 
- */
+/* Every Ladder range is [X, Y), end is exclusive */
+
 function LadderSelector(props) {
 
 	let options = [];
@@ -12,12 +9,12 @@ function LadderSelector(props) {
 	}
 	return (
 		<div>
-			<div className='row flex-row flex-nowrap mb-2 justify-content-center'>
+			<div className='row flex-row flex-nowrap mb-4 justify-content-center'>
 				<div className='col-12 col-md-10 col-lg-9 col-xl-8 text-center'>
 				{
 					options.map(option => {
 						return (
-							<button className="col-auto p-2" key={option[0]} onClick={() => props.setLadderData({
+							<button className="col-auto p-3" key={option[0]} onClick={() => props.setLadderData({
 								startRating: option[0],
 								endRating: option[1],
 							})} style={{

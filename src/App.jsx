@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import UserCard from "./components/UserCard";
 import Ladder from "./components/Ladder";
-import LadderSelector from "./components/LadderSelector"
+import LadderSelector from "./components/LadderSelector";
+// import { LadderSelectorT } from "./components/LadderSelectorT";
 
 import axios from "axios";
 import { constants } from "./utils/constants";
-import { assignNewStatus, fetchUserSubmissionsWithRetry, getProblemID } from './utils/utils';
+import {
+    assignNewStatus,
+    fetchUserSubmissionsWithRetry,
+    getProblemID,
+} from "./utils/utils";
 
 import "./App.css";
 import { BiSearchAlt } from "react-icons/bi";
@@ -18,8 +23,8 @@ const App = () => {
     const [userData, setUserData] = useState(null);
     const [userStats, setUserStats] = useState(null);
     const [ladderData, setLadderData] = useState({
-        startRating: 1200,
-        endRating: 1300,
+        startRating: 1000,
+        endRating: 1100,
     });
     const [problemStatusMap, setProblemStatusMap] = useState({});
     const [fetchIntervalID, setfetchIntervalID] = useState();
@@ -61,25 +66,28 @@ const App = () => {
     const updateProblemStatusMap = async (userData) => {
         let newMap = {};
         const submissions = await fetchUserSubmissionsWithRetry(userData, 3);
-        submissions.forEach( (submission) => {
+        submissions.forEach((submission) => {
             const problem = { ...submission.problem };
             const id = getProblemID(problem);
             newMap[id] = assignNewStatus(newMap[id], submission.verdict);
-        })
+        });
         console.log("User-submissions Status Map: ", newMap);
         setProblemStatusMap(newMap);
     };
 
     useEffect(() => {
-		if (!userData) return;
-		setProblemStatusMap({});
-		if (fetchIntervalID) {
-			clearInterval(fetchIntervalID);
-		}
-		updateProblemStatusMap(userData);
-		const newFetchIntervalID = setInterval(() => updateProblemStatusMap(userData), constants.submissionFetchInterval);
-		setfetchIntervalID(newFetchIntervalID);
-	}, [userData]);
+        if (!userData) return;
+        setProblemStatusMap({});
+        if (fetchIntervalID) {
+            clearInterval(fetchIntervalID);
+        }
+        updateProblemStatusMap(userData);
+        const newFetchIntervalID = setInterval(
+            () => updateProblemStatusMap(userData),
+            constants.submissionFetchInterval
+        );
+        setfetchIntervalID(newFetchIntervalID);
+    }, [userData]);
 
     return (
         <div className="App container-fluid">
@@ -119,8 +127,19 @@ const App = () => {
             ) : null}
 
             <UserCard userData={userData} userStats={userStats} />
-            <LadderSelector startRating={900} endRating={3600} step={100} setLadderData={setLadderData} ladderData={ladderData}/>
-			<Ladder ladderData={ladderData} problemStatusMap={problemStatusMap} setUserStats={setUserStats}/>
+            <LadderSelector
+                startRating={900}
+                endRating={3600}
+                step={100}
+                setLadderData={setLadderData}
+                ladderData={ladderData}
+            />
+            {/* <LadderSelectorT /> */}
+            <Ladder
+                ladderData={ladderData}
+                problemStatusMap={problemStatusMap}
+                setUserStats={setUserStats}
+            />
         </div>
     );
 };
