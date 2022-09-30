@@ -10,13 +10,13 @@ function Ladder(props) {
     const fetchProblems = async () => {
         const options = {
             method: "GET",
-            url: `https://cors-anywhere.herokuapp.com/${constants.c2api}/ladder`,
+            url: `https://cors.just-testing-stuff.workers.dev/?${constants.c2api}/ladder?startRating=${data.startRating}&endRating=${data.endRating}`,
             // withCredentials: false,
             // mode: 'cors',
-            params: {
-                startRating: data.startRating,
-                endRating: data.endRating,
-            },
+            // params: {
+            //     startRating: data.startRating,
+            //     endRating: data.endRating,
+            // },
             // headers: {
             //     'Access-Control-Allow-Origin': '*',
             //     'Content-Type': 'application/json',

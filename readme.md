@@ -6,7 +6,11 @@ CF
     https://codeforces.com/api/user.info?handles=DmitriyH
     https://codeforces.com/api/user.status?handle=Fefer_Ivan&from=1&count=10
 
-https://cors-anywhere.herokuapp.com/corsdemo
+~~https://cors-anywhere.herokuapp.com/corsdemo~~
+
+Deploying my own CORS Workers Service:  
+GitHub Repo: `https://github.com/Zibri/cloudflare-cors-anywhere`
+My Service: `https://cors.just-testing-stuff.workers.dev/?{URL}`
 
 ## Articles:
 
