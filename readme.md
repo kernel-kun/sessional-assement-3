@@ -22,4 +22,4 @@ How to sort react list
 ## Doubts:
 
 - Why can't we use svg inside img tag?  
-- Why adding `homepage: ".",` inside package.json fixed error with `cannot find index.{...}.js`  
+- Why adding `vite build --base=./` inside package.json fixed error with `cannot find index.{...}.js` [NOTE: This was similar to setting `homepage: "."` for cra Webpack]  

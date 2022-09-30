@@ -1,12 +1,11 @@
 {
   "name": "kanzen-ladders",
   "private": true,
-  "homepage": ".",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=./",
     "preview": "vite preview"
   },
   "dependencies": {
