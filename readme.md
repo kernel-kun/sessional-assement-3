@@ -8,9 +8,13 @@ CF
 
 ~~https://cors-anywhere.herokuapp.com/corsdemo~~
 
-Deploying my own CORS Workers Service:  
-GitHub Repo: `https://github.com/Zibri/cloudflare-cors-anywhere`  
-My Service: `https://cors.just-testing-stuff.workers.dev/?{URL}`
+> __Deploying my own CORS Workers Service:__  
+<pre>GitHub Repo   :  https://github.com/Zibri/cloudflare-cors-anywhere  
+My Service    :  https://cors.just-testing-stuff.workers.dev/?{URL}  </pre>
+
+> __Deploying my own Redirect Service:__  
+<pre>GitHub Gist   :  https://gist.github.com/kernel-kun/b60e0e5e6d20b2e6572eebc4f2ff9bd1  
+My Service    :  https://redirect.just-testing-stuff.workers.dev/  </pre>
 
 ## Articles:
 
