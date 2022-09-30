@@ -9,7 +9,7 @@ CF
 ~~https://cors-anywhere.herokuapp.com/corsdemo~~
 
 Deploying my own CORS Workers Service:  
-GitHub Repo: `https://github.com/Zibri/cloudflare-cors-anywhere`
+GitHub Repo: `https://github.com/Zibri/cloudflare-cors-anywhere`  
 My Service: `https://cors.just-testing-stuff.workers.dev/?{URL}`
 
 ## Articles:
@@ -21,4 +21,5 @@ How to sort react list
 
 ## Doubts:
 
-- Why can't we use svg inside img tag?
+- Why can't we use svg inside img tag?  
+- Why adding `homepage: ".",` inside package.json fixed error with `cannot find index.{...}.js`  
